@@ -1,0 +1,329 @@
+
+@import url('https://fonts.googleapis.com/css?family=Fascinate+Inline');
+@import url('https://fonts.googleapis.com/css?family=Nixie+One');
+
+.container{
+    max-width: 1140px;
+    height: 90vh;
+    margin: 40px  auto 0 auto;
+    padding: 50px;
+    background: rgba(255, 255, 255, 0.7);
+    overflow:auto;
+    overflow-x:hidden;
+    border-radius: 20px; 
+}
+
+.recipe-panel{
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+.recipe-panel h1{
+    font-family: 'Fascinate Inline', cursive;
+    font-size: 100px; 
+    margin: 0;   
+    position: relative;
+    display: inline-block;
+    margin: 0 auto;
+    
+}
+
+.recipe-panel h1.off{
+    display: none;
+}
+
+.recipe-panel .box{
+    width: 90px;
+    height: 90px;
+    margin-bottom: -20px;
+    animation: updown 1s infinite;
+}
+
+.recipe-panel .recipe-panel-title{
+    font-family: 'Nixie One', cursive;
+    font-size: 80px;    
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+}
+
+.on{
+    display: inline;
+}
+
+.off{
+    display: none;
+}
+.typed-cursor {
+    font-size: 80px;
+    display: none;
+}
+
+
+.group {
+    width: 100%;
+    display: flex;
+    flex-wrap:wrap;
+}
+.recipe-tab{
+    display: inline-block;
+    height: auto;
+    flex-basis: 30%;
+    height: 300px;
+    margin: 15px;
+    background-color: #DFDBE5;
+    position: relative;
+    border-radius: 10px;
+    border: 5px solid #A29E8E;
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+
+
+.recipe-tab .button-list{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+
+.recipe-tab:hover .button-list{
+    opacity: 1;
+}
+
+.btn{
+    font-size: 20px;
+    border:none;
+    border-radius: 3px;
+    transition: all 0.2s;
+}
+
+.btn:hover{
+    transform: scale(1.3);
+}
+
+.recipe-tab .recipe-tab-edit-btn{
+    background-color: #016ECD;
+}
+
+.recipe-tab .recipe-tab-delete-btn{
+    background-color: #DA4F4A;
+    margin-left: 10px;
+}
+
+.recipe-tab .recipe-tab-name {
+    font-family: 'Nixie One', cursive;
+    font-size: 50px;    
+}
+
+.recipe-tab .ingredient-list {
+    margin: 0;
+    width: 100%;
+    height: 80%;
+    padding: 10px;
+    list-style: none;
+    font-family: 'Nixie One', cursive;
+    overflow: scroll; 
+    overflow-x: hidden; 
+    position: absolute;
+    top:-80%;
+    background: inherit;
+    transition: all 0.5s;
+    border-bottom: 5px solid #A29E8E;
+    font-weight: bold;
+}
+
+.recipe-tab:hover  .ingredient-list{
+    top: 0;
+}
+
+
+.recipe-tab .ingredient-list .ingredient-list-item{
+text-align: left;
+font-size: 20px;
+margin-bottom: 20px;
+}
+
+  .example-enter {
+    transform:scale(0);
+  }
+ 
+  .example-enter.example-enter-active {
+    transform:scale(1);
+    transition: transform 500ms ease-in;
+  }
+
+  .example-exit {
+    transform: translateY(0) scale(1)
+  }
+  
+  .example-exit.example-exit-active {
+    transform: translateY(1000px) scale(0);
+    transition: transform 0.5s ease-in;
+  }
+
+.add-btn{
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    border-radius: 5px;
+    border:none;
+    padding: 10px;
+    background-color: #A29E8E;
+    font-size: 50px;
+    font-family: 'Nixie One', cursive;
+    
+}
+
+.arrow{
+    position: fixed;
+    bottom: 150px;
+    right: 60px;
+    font-size: 30px;
+    animation: updown 1.2s infinite;
+}
+
+@keyframes updown {
+    0% {transform:translateY(0px);}
+    60% {transform: translateY(20px);}
+    70% {transform: translateY(15px)}
+    80% {transform: translateY(10px);}
+    90% {transform:translateY(5px);}
+    100% {transform:translateY(0px);}
+  }
+
+
+
+/* Form style -------------------------- */
+
+.ReactModal__Overlay {
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.3);
+}
+
+
+.ReactModal__Content{
+    width: 25%;
+    height: 500px;
+    margin: 0 auto;
+    background: #DFDBE5;
+    width: 25%;
+    height: 500;
+    border: 10px solid #A29E8E;
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    right: 40px;
+    bottom: 40px;
+    overflow: auto;
+    border-radius: 4px;
+    outline:none;
+    padding: 20px;
+
+}
+
+
+.ReactModal__Content {
+    transition: all 500ms ease-in-out;
+    transform: translateY(-1000px);
+    opacity: 0;
+  }
+  .ReactModal__Content--after-open {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .ReactModal__Content--before-close {
+    opacity: 0;
+    transform: translateX(-10000px);
+  }
+  
+
+
+
+.form{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.form .recipe-card{
+    font-family: 'Fascinate Inline', cursive;
+    font-size: 50px;
+    margin: 0;    
+    text-align: center
+}
+
+.form hr {
+    border-top: 3px double #8c8b8b;
+}
+.form .input-container{
+    margin: 50px 0;
+}
+
+
+.form .input-container:nth-of-type(2){
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 30px;
+}
+
+.form .input-container .input-label{
+    margin-right: 30px; 
+    font-size: 15px;
+    font-family: 'Fascinate Inline', cursive;
+}
+
+
+.form .input-container input{
+    border: none;
+    border-bottom: 2px solid transparent;
+    width: 80%; 
+    background: inherit;
+    transition: all 0.2s;
+    font-family: 'Nixie One', cursive;
+    
+}
+
+
+.form .input-container textarea{
+    width: 230px;
+    height: 165px;
+    resize: none;
+    border-radius: 10px;
+    font-family: 'Nixie One', cursive;
+    
+}
+
+.form .input-container input:hover{
+    border-bottom: 2px solid black;
+    
+}
+
+.form .form-btn-container{
+    float: right;
+}
+
+.form .form-btn-container button{
+    font-size: 20px;
+    margin-left: 10px;
+    border-radius: 3px;
+    border: none;
+}
+
+
+
+@import 'responsive.css';
+
+
